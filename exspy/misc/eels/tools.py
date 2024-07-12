@@ -60,7 +60,7 @@ def _estimate_gain(
         variance2fit = variance
         average2fit = average
 
-    fit = np.polynomial.Polynomial.fit(average2fit, variance2fit, pol_order)
+    fit = np.polynomial.Polynomial.fit(average2fit, variance2fit, pol_order).convert().coef
     if weighted is True:
         import hyperspy.api as hs
 
